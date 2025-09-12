@@ -26,20 +26,27 @@ const StatisticsPage = () => {
         </div>
 
         <div
-          style={{
-            height: 500,
-            width: "60%",
-            justifySelf: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 30,
-            color: "black",
-            textAlign: "center",
-          }}
-        >
-          NO ONGOING EVENTS AT THE MOMENT
-        </div>
+        style={{
+          height: 500,
+          width: "60%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          fontSize: 30,
+          color: "black",
+          margin: "0 auto",
+        }}
+      >
+        <span style={{ marginBottom: 20, fontWeight: 600 }}>
+          NO ONGOING EVENTS
+        </span>
+        <span style={{ fontSize: 24 }}>
+          AT THE MOMENT
+        </span>
+      </div>
+
       </main>
 
       <Footer />
