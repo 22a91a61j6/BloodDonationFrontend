@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { io } from 'socket.io-client';
+
+const port = process.env.REACT_APP_SERVER_PORT || 'http://localhost:3001';
+const socket = io(port);
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#ff7300', '#82ca9d', '#ffc658'];
 
@@ -15,36 +21,51 @@ const TriangleBar = (props) => {
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-export default function BloodGroupChart() {
+export default function BloodGroupChart(props) {
   const [donorData, setDonorData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    try {
-      setLoading(true);
-      setError(null);
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const url = `${port}/count-by-blood-group?collegeCode=${props.college}&EventDate=YES`;
+        const result = await axios.get(url);
 
-      const randomData = [
-        { name: 'A+', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'A-', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'B+', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'B-', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'O+', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'O-', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'AB+', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-        { name: 'AB-', count: Math.floor(Math.random() * 100), pv: 0, amt: 0 },
-      ];
+        const actualResult = Object.entries(result.data).map(([key, value]) => ({
+          name: key === "UnKnown" ? "Unknown" : key,
+          count: value,
+          pv: 0,
+          amt: 0
+        }));
+        
+        setDonorData(actualResult);
+      } catch (error) {
+        console.error('Error fetching blood group data:', error);
+        setError('Failed to load data');
+        setDonorData([{
+          name: "No Data",
+          count: 0,
+          pv: 0,
+          amt: 0
+        }]);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      setDonorData(randomData);
-    } catch (err) {
-      console.error(err);
-      setError('Failed to load data');
-      setDonorData([{ name: "No Data", count: 0, pv: 0, amt: 0 }]);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+    fetchData();
+
+    // Listen for real-time updates
+    socket.on('new-registration', fetchData);
+
+    return () => {
+      socket.off('new-registration');
+    };
+  }, [props.college]);
 
   if (loading) {
     return (
@@ -75,7 +96,12 @@ export default function BloodGroupChart() {
         width={window.innerWidth * 0.6}
         height={350}
         data={donorData}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
