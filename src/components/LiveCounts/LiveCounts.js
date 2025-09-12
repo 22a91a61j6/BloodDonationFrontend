@@ -26,21 +26,19 @@ const StatisticsPage = () => {
         </div>
 
         <div
-            className="form-container"
-            style={{
-              height: "300px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "black",
-              fontSize: "30px",
-              wordSpacing: "5px",
-            }}
-          >
-            NO ONGOING EVENTS AT THE MOMENT
-          </div>
-      </div>
-
+          className="form-container"
+          style={{
+            height: "300px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "black",
+            fontSize: "30px",
+            wordSpacing: "5px",
+          }}
+        >
+          NO ONGOING EVENTS AT THE MOMENT
+        </div>
       </main>
 
       <Footer />
