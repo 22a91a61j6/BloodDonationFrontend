@@ -22,7 +22,7 @@ const StatisticsPage = () => {
             marginTop: 50,
           }}
         >
-          No Live Events At This Moment
+          Live Counts and Live Stats
         </div>
 
         <div
