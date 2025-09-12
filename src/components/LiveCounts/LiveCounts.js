@@ -14,7 +14,7 @@ const StatisticsPage = () => {
           style={{
             width: "100%",
             display: "flex",
-            borderBottom: "3px solid black",
+            // borderBottom: "3px solid black",
             justifyContent: "center",
             color: "black",
             fontSize: 50,
