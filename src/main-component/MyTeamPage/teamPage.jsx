@@ -136,6 +136,7 @@
 
 // export default TheTeamPage;
 
+
 import React from "react";
 import './teamPage.css';
 import { FaLinkedinIn } from "react-icons/fa";
