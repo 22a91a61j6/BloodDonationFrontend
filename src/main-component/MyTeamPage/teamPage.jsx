@@ -63,17 +63,7 @@ const TheTeamPage = () => {
       }
     },
     {
-      name: "Charan Raju",
-      image: require("../../assets/charan_raju.png"),
-      socialLinks: {
-        linkedin: "https://www.linkedin.com/in/charan-raju-pakalapati-74416629b/",
-        email: "mailto:charanraju925@gmail.com", // ✅ Fixed with mailto:
-        github: "https://github.com/Charanraju18"
-      }
-    },
-    
-    {
-      name: "Uday Teja",
+      name: "Raju",
       image: require("../../assets/charan_raju.png"),
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/charan-raju-pakalapati-74416629b/",
