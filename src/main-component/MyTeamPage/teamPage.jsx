@@ -74,9 +74,9 @@ const TheTeamPage = () => {
     
     {
       name: "Uday Teja",
-      image: "https://info.aec.edu.in/aec/StudentPhotos/22A91A61I7.jpg",
+      image: require("../../assets/Uday Teja.png"),
       socialLinks: {
-        linkedin: "https://www.linkedin.com/in/charan-raju-pakalapati-74416629b/",
+        linkedin: "https://www.linkedin.com/in/uday-teja-ratna-kumar-tirumani-710176258/",
         email: "mailto:charanraju925@gmail.com",
         github: "https://github.com/Charanraju18"
       }
