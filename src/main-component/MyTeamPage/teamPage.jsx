@@ -26,6 +26,17 @@ const TheTeamPage = () => {
         github: "https://github.com/22a91a61j6"
       }
     },
+    
+    {
+      name: "Uday Teja",
+      image: require("../../assets/Uday Teja.png"),
+      socialLinks: {
+        linkedin: "https://www.linkedin.com/in/uday-teja-ratna-kumar-tirumani-710176258/",
+        email: "mailto:charanraju925@gmail.com",
+        github: "https://github.com/Charanraju18"
+      }
+    },
+    
     {
       name: "Vivek Kumar",
       image: require("../../assets/vivek_kumar.png"),
@@ -72,15 +83,6 @@ const TheTeamPage = () => {
       }
     },
     
-    {
-      name: "Uday Teja",
-      image: require("../../assets/Uday Teja.png"),
-      socialLinks: {
-        linkedin: "https://www.linkedin.com/in/uday-teja-ratna-kumar-tirumani-710176258/",
-        email: "mailto:charanraju925@gmail.com",
-        github: "https://github.com/Charanraju18"
-      }
-    }
   ];
 
   return (
