@@ -141,7 +141,6 @@ import './teamPage.css';
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
-import Veda from '../../assets/BloodGroup2.jpg';
 
 const TheTeamPage = () => {
   const teamData = [
@@ -208,8 +207,6 @@ const TheTeamPage = () => {
         github: "https://github.com/Charanraju18"
       }
     },
-
-    // ✅ FINAL FIXED — ONLINE IMAGE WITHOUT require()
     {
       name: "Uday Teja",
       image: "https://info.aec.edu.in/aec/StudentPhotos/22A91A61I7.jpg",
@@ -218,7 +215,7 @@ const TheTeamPage = () => {
         email: "mailto:charanraju925@gmail.com",
         github: "https://github.com/Charanraju18"
       }
-    },
+    }
   ];
 
   return (
@@ -234,7 +231,11 @@ const TheTeamPage = () => {
 
         <div className="forTeamIndividual">
           <div className="teamImageOut">
-            <img src={Veda} alt="vedaimages" />
+            {/* ✅ NEW MAIN IMAGE HERE */}
+            <img
+              src="https://i.pinimg.com/1200x/57/1f/59/571f59b1d55e1f1931edc7479a36f5f6.jpg"
+              alt="team banner"
+            />
           </div>
         </div>
       </div>
@@ -249,7 +250,7 @@ const TheTeamPage = () => {
         <div className="teamPageDownIn">
           {teamData.map((member, index) => (
             <div key={index} className="totalTealIndividual">
-              
+
               <div className="teamCardOut">
                 <div className="memberNavOPtion">
                   <a href={member.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="linkedInData iconData">
