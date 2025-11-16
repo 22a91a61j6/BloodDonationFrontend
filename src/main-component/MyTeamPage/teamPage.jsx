@@ -63,7 +63,7 @@ const TheTeamPage = () => {
       }
     },
     {
-      name: "Raju",
+      name: "Charan Raju",
       image: require("../../assets/charan_raju.png"),
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/charan-raju-pakalapati-74416629b/",
