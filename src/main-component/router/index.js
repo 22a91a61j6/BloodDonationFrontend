@@ -63,7 +63,7 @@ const AllRoute = () => {
 
           <Route path="live-counts" element={<LiveCounts />} />
           <Route path="register" element={<Registration />} />
-          // <Route path='myTeamPage' element={<MyTeamPage />} />
+          <Route path='myTeamPage' element={<MyTeamPage />} />
         </Routes>
       </BrowserRouter>
 
