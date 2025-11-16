@@ -80,7 +80,7 @@ const Header2 = (props) => {
                                             <li><Link onClick={ClickHandler} to="/about">About</Link></li>
                                             <li><Link onClick={ClickHandler} to="/contact">Contact</Link></li>
                                             <li><Link onClick={ClickHandler} to="/register">Register</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/myTeamPage">My Team</Link></li>
+                                            // <li><Link onClick={ClickHandler} to="/myTeamPage">My Team</Link></li>
                                             
                                             {/* <li>
                                             <div style={{ width: "100%", justifyContent: "flex-end", display: "flex" }}>
