@@ -71,6 +71,7 @@ const TheTeamPage = () => {
         github: "https://github.com/Charanraju18"
       }
     },
+    
   ];
 
   return (
