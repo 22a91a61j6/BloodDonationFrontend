@@ -5,7 +5,7 @@ import { MdAttachEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 // import Veda from '../../assets/veda.jpg';
 import Veda from '../../assets/BloodGroup2.jpg';
-import BloodMainMi from '../../assets/BloodDonationMI.jpg';
+// import BloodMainMi from '../../assets/BloodDonationMI.jpg';
 
 const TheTeamPage = () => {
   const teamData = [
@@ -97,7 +97,7 @@ const TheTeamPage = () => {
         <h2 className="sectionTitle__big">We Are The Creators !</h2>
         <div className="forTeamIndividual">
           <div className="teamImageOut">
-            <img src={BloodMainMi} alt={'No Blood Donation img'}/>
+            <img src={Veda} alt={'No Blood Donation img'}/>
           </div>
         </div>
       </div>
